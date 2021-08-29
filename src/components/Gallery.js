@@ -47,7 +47,7 @@ const StyledWrapper = styled.section`
         }
   }
 `;
-const nums = Array.from(Array(28).keys()).map((v, idx) => (idx + 1));
+const nums = Array.from(Array(29).keys()).map((v, idx) => (idx + 1));
 export default function Gallery() {
     const onInit = () => {
         console.log('lightGallery has been initialized');
