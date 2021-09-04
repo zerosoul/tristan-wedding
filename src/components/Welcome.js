@@ -1,9 +1,20 @@
 import React, { useState } from 'react'
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Timer from 'react-compound-timer'
 import Confetti from 'confetti-react';
 import Title from './SectionTitle'
 
+const AniBreath = keyframes`
+  from{
+    opacity:0.4;
+    box-shadow: none;
+  }
+  to{
+    opacity:1;
+    box-shadow:  20px 20px 60px #079155,
+               -20px -20px 60px #079e5d;
+  }
+`;
 const StyledWrapper = styled.section`
   width:100%;
   background-color: #eee;
@@ -68,12 +79,7 @@ const StyledWrapper = styled.section`
       padding:.1rem .3rem;
       /* background-color: rgba(0, 202, 114, 1); */
       background: linear-gradient(145deg, #09b66b, #07995a);
-      transition: all .5s;
-      &:hover{
-        box-shadow:  20px 20px 60px #079155,
-               -20px -20px 60px #079e5d;
-               opacity: 1;
-      }
+      animation: ${AniBreath} 1s infinite alternate;
       color:#fff;
       border-radius: 25px;
       border:none;

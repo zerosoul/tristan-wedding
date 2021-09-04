@@ -4,11 +4,8 @@ export default function HTML(props) {
     <html {...props.htmlAttributes} lang="zh-CN">
       <head>
         <meta charSet="utf-8" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge;chrome" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no,user-scalable=no,maximum-scale=1" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

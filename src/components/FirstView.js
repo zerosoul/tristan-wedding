@@ -28,6 +28,7 @@ const StyledWrapper = styled.section`
   align-items: center;
   justify-content: center;
   .box{
+      z-index: 99;
       margin-top: 1.2rem;
       color: #000;
       padding:.5rem;

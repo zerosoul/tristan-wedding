@@ -1,7 +1,44 @@
 import React from 'react';
 import Confetti from 'confetti-react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { MdClose } from 'react-icons/md'
+const AniBounceIn = keyframes`
+ from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+`;
 const StyledPopup = styled.section`
 z-index: 99999;
   position:fixed;
@@ -11,12 +48,13 @@ z-index: 99999;
   bottom:0;
   background-color:rgba(2,2,2,.8);
   .tip{
-      width: 4rem;
+      box-sizing: border-box;
+      width: 5rem;
       z-index: 9;
       position: absolute;
-      top:50%;
+      top:1rem;
       left: 50%;
-      transform: translate3d(-50%,-50%,0);
+      margin-left: -2.5rem ;
       padding:.4rem .3rem;
       font-size: .3rem;
       background-color: #fff;
@@ -25,6 +63,7 @@ z-index: 99999;
       flex-direction: column;
       align-items: center;
       gap: .2rem;
+      animation: ${AniBounceIn} 1s both;
       .title{
           font-size: .3rem;
           font-weight: 800;
