@@ -3145,6 +3145,13 @@ concat-stream@^1.5.2:
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
+confetti-react@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.nlark.com/confetti-react/download/confetti-react-2.5.0.tgz#efcdbb6b8b4abe8db9ee1abcb86ae6b6a84c90e3"
+  integrity sha1-7827a4tKvo257hq8uGrmtqhMkOM=
+  dependencies:
+    tween-functions "^1.2.0"
+
 configstore@^5.0.1:
   version "5.0.1"
   resolved "https://registry.nlark.com/configstore/download/configstore-5.0.1.tgz#d365021b5df4b98cdd187d6a3b0e3f6a7cc5ed96"
@@ -8925,6 +8932,11 @@ rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-compound-timer@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.nlark.com/react-compound-timer/download/react-compound-timer-1.2.0.tgz#52df2980dce0b63ddaf5718235a51188cb223d1d"
+  integrity sha1-Ut8pgNzgtj3a9XGCNaURiMsiPR0=
+
 react-dev-utils@^11.0.3:
   version "11.0.4"
   resolved "https://registry.nlark.com/react-dev-utils/download/react-dev-utils-11.0.4.tgz#a7ccb60257a1ca2e0efe7a83e38e6700d17aa37a"
@@ -10620,6 +10632,11 @@ tunnel-agent@^0.6.0:
   integrity sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0=
   dependencies:
     safe-buffer "^5.0.1"
+
+tween-functions@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.nlark.com/tween-functions/download/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
+  integrity sha1-GuOlDnxguz3vd06scHrLynO7w/8=
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"

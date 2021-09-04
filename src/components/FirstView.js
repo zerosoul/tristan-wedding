@@ -1,7 +1,8 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components';
 import { HiChevronDoubleDown } from 'react-icons/hi'
-import WelcomeImage from '../assets/imgs/first.blood.jpg'
+import Confetti from 'confetti-react'
+
 import FrameImage from '../assets/imgs/frame.png'
 const AniDown = keyframes`
     from{
@@ -49,6 +50,7 @@ const StyledWrapper = styled.section`
           color:#666;
       } */
       .title{
+          font-family: 'SP-F';
           font-weight: bold;
           display: flex;
           gap:.1rem;
@@ -73,6 +75,7 @@ const StyledWrapper = styled.section`
 export default function FirstView() {
     return (
         <StyledWrapper>
+            <Confetti className="mask" recycle={true} numberOfPieces={99} wind={0.01} gravity={0.1} opacity={.8} tweenDuration={8000} />
             <div className="box">
                 {/* <div className="married">我们结婚啦</div> */}
                 <div className="title">

@@ -10,10 +10,11 @@ import Gallery from '../components/Gallery'
 import Welcome from '../components/Welcome'
 import CommonStyle from '../components/CommonStyle'
 import Footer from '../components/Footer'
-
+import Confetti from '../components/Confetti'
 
 export default function Index({ data }) {
-  const [ready, setReady] = useState(false)
+  const [ready, setReady] = useState(false);
+  const [dan, setDan] = useState(null)
   const {
     title: siteTitle,
     description: siteDescription
@@ -25,7 +26,10 @@ export default function Index({ data }) {
     return () => {
       clearTimeout(inter)
     }
-  }, [])
+  }, []);
+  const closeDan = () => {
+    setDan(null)
+  }
   return (
     <div>
       <Helmet>
@@ -34,10 +38,11 @@ export default function Index({ data }) {
       </Helmet>
       <CommonStyle />
       <Reset />
+      {dan && <Confetti dan={dan} closeDan={closeDan} />}
       <FirstView />
-      <Couple />
+      <Couple popupDan={setDan} />
       <Story />
-      {ready && <Gallery />}
+      {ready && <Gallery popupDan={setDan} />}
       <Wedding />
       <Welcome />
       <Footer />

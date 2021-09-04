@@ -30,11 +30,12 @@ position: relative;
     align-items: center;
     justify-content: center;
     gap:.4rem;
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 768px) {
         flex-direction: column;
     }
       .box{
-          min-height: 4rem;
+          min-height: 4.4rem;
+          min-width: 4rem;
         background-color: rgba(2,2,2,.5);
         z-index: 9;
           color: #fff;
@@ -55,28 +56,36 @@ position: relative;
             padding-bottom: .2rem;
           }
           .items{
+              width: 100%;
               display: flex;
               flex-direction: column;
+              align-items: flex-start;
               gap:.12rem;
               .item{
                   display: flex;
                   align-items: flex-start;
                   gap: .04rem;
+                  @media screen and (max-width: 360px) {
+                        flex-direction: column;
+                        gap: .1rem;
+                    }
                   .label{
-                      color:#eee;
+                      color:#ccc;
+                      white-space: nowrap;
                       &:after{
                           content:"：";
                       }
                   }
                   .txt{
-                      font-size: .22;
+                      font-size: .22rem;
                     white-space: nowrap;
+                    font-weight: 800;
                       &.loc{
                           display: flex;
                           flex-direction: column;
                           gap: .12rem;
                           .map{
-                              width:3rem;
+                              width:2.4rem;
                               img{
                                   width:100%;
                               }

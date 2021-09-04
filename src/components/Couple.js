@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import Title from './SectionTitle'
 import FrameImage from '../assets/imgs/frame.png'
@@ -45,35 +45,56 @@ const StyledWrapper = styled.section`
               }
           }
           .name{
+            font-family: 'SP-F';
               font-size: .4rem;
               padding:.2rem 0;
           }
           .intro{
             font-size: .12rem;
+            white-space: nowrap;
           }
       }
 
   }
 `;
-export default function Couple() {
+const tips = {
+    h: {
+        m: '右面',
+        w: '左面'
+    },
+    v: {
+        m: '下面',
+        w: '上面'
+    }
+}
+export default function Couple({ popupDan }) {
+    const [pos, setPos] = useState('h')
+    useEffect(() => {
+        if (window.innerWidth <= 360) {
+            setPos('v')
+        }
+    }, []);
+    const handleDC = () => {
+        popupDan("双击666")
+    }
     return (
         <StyledWrapper>
-            <Title title="新郎 & 新娘" />
+            <Title title="新郎 · 新娘" />
             <div className="cp">
                 <div className="profile">
-                    <div className="pic boy">
+                    <div className="pic boy" onDoubleClick={handleDC}>
                         <img src={FrameImage} alt="man" />
                     </div>
                     <div className="name">杨国春🤵🏻</div>
-                    <div className="intro">我有三样东西不可或缺：水，空气，以及右边那个女人</div>
+                    <div className="intro">我有三样东西不可或缺：水，空气，以及{tips[pos].m}那个女人</div>
 
                 </div>
                 <div className="profile">
-                    <div className="pic girl">
+                    <div className="pic girl" onDoubleClick={handleDC}>
                         <img src={FrameImage} alt="man" />
                     </div>
                     <div className="name">朱聪👰🏻</div>
-                    <div className="intro">我有三样东西不可或缺：水，空气，以及左边那个男人</div>
+                    <div className="intro">我有三样东西不可或缺：水，空气，以及{tips[pos].w}那个男人</div>
 
                 </div>
             </div>
