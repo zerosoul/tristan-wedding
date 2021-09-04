@@ -46,7 +46,7 @@ const StyledWrapper = styled.section`
             }
           }
       }
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 375px) {
             padding:0 .02rem;
             .lg-react-element{
                 column-count: 3;

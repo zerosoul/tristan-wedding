@@ -28,7 +28,7 @@ const CommonStyle = createGlobalStyle`
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 375px) {
     html {
         font-size:60px
     }
