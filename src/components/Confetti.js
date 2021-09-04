@@ -11,6 +11,7 @@ z-index: 99999;
   bottom:0;
   background-color:rgba(2,2,2,.8);
   .tip{
+      width: 4rem;
       z-index: 9;
       position: absolute;
       top:50%;

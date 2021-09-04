@@ -27,7 +27,10 @@ const StyledWrapper = styled.section`
       max-height: 80vh;
       overflow: scroll;
       .lg-react-element{
-          column-count: 4;
+          column-count: 5;
+          @media screen and (max-width: 1500px) {
+            column-count: 4;
+            }
           @media screen and (max-width: 768px) {
             column-count: 3;
             }
@@ -61,6 +64,7 @@ const StyledWrapper = styled.section`
         .group{
             display: flex;
             .btn{
+                cursor: pointer;
                 border:none;
                 font-size: .3rem;
                 padding:.08rem .12rem;
@@ -101,7 +105,7 @@ const GalleryInstance = ({ popupDan, cate = "wedding", photos = [] }) => {
     const handleLgClose = () => {
         console.log('lg close');
         if (viewCount.current >= 20) {
-            popupDan("超长回忆蛋")
+            popupDan("超长回忆")
         }
     };
     const handleLgOpen = () => {
