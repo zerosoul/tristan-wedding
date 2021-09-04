@@ -60,8 +60,9 @@ position: relative;
               display: flex;
               flex-direction: column;
               align-items: flex-start;
-              gap:.12rem;
+              gap:.2rem;
               .item{
+                font-size: .22rem;
                   display: flex;
                   align-items: flex-start;
                   gap: .04rem;
@@ -77,7 +78,7 @@ position: relative;
                       }
                   }
                   .txt{
-                      font-size: .22rem;
+                      
                     white-space: nowrap;
                     font-weight: 800;
                       &.loc{
@@ -86,8 +87,15 @@ position: relative;
                           gap: .12rem;
                           .map{
                               width:2.4rem;
+                              height:2.4rem;
                               img{
                                   width:100%;
+                                  height: 100%;
+                                  border: 1px solid #ccc;
+                                    border-radius: 10px;
+                              }
+                              &:hover img{
+                                box-shadow: 0px 1px 20px black;
                               }
                           }
                       }

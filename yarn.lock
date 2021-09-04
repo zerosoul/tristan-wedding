@@ -10683,6 +10683,11 @@ type@^2.5.0:
   resolved "https://registry.nlark.com/type/download/type-2.5.0.tgz#0a2e78c2e77907b252abe5f298c1b01c63f0db3d"
   integrity sha1-Ci54wud5B7JSq+XymMGwHGPw2z0=
 
+typed.js@^2.0.12:
+  version "2.0.12"
+  resolved "https://registry.nlark.com/typed.js/download/typed.js-2.0.12.tgz#246aff074c8e18d32ec27acb7be15094ac0bc0e1"
+  integrity sha1-JGr/B0yOGNMuwnrLe+FQlKwLwOE=
+
 typedarray-to-buffer@^3.1.5:
   version "3.1.5"
   resolved "https://registry.nlark.com/typedarray-to-buffer/download/typedarray-to-buffer-3.1.5.tgz#a97ee7a9ff42691b9f783ff1bc5112fe3fca9080"

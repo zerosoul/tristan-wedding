@@ -39,10 +39,11 @@ const StyledWrapper = styled.section`
         flex-direction: column;
         align-items: center;
         gap: .1rem;
-        padding: .15rem;
-        width: 1.4rem;
-        height: 1.4rem;
-        border: 1px solid #ccc;
+        padding: 0.35rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        border: 1px solid #999;
+        border-radius: 50%;
         .num{
           color: #fff;
           font-weight: 800;

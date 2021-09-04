@@ -64,17 +64,20 @@ const StyledWrapper = styled.section`
         .group{
             display: flex;
             .btn{
+                transition: all .6s ease-in-out;
                 cursor: pointer;
                 border:none;
                 font-size: .3rem;
-                padding:.08rem .12rem;
+                padding:.08rem .3rem;
                 &:first-child{
-                    border-top-left-radius: 10px;
-                    border-bottom-left-radius: 10px;
+                    padding-left: .6rem;
+                    border-top-left-radius: 30px;
+                    border-bottom-left-radius: 30px;
                 }
                 &:last-child{
-                    border-top-right-radius: 10px;
-                    border-bottom-right-radius: 10px;
+                    padding-right: .6rem;
+                    border-top-right-radius: 30px;
+                    border-bottom-right-radius: 30px;
                 }
                 &.curr{
                     color:#fff;

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import Confetti from 'confetti-react';
 import styled, { keyframes } from 'styled-components';
 import { MdClose } from 'react-icons/md'
+import Typed from 'typed.js'
+
 const AniBounceIn = keyframes`
  from,
   20%,
@@ -73,6 +75,7 @@ z-index: 99999;
           font-size: .2rem;
           padding:.3rem 0;
           word-break: break-all;
+          width: 100%;
           p{
               margin-bottom: .14rem;
               line-height: 1.5;
@@ -103,21 +106,43 @@ z-index: 99999;
   }
 `;
 export default function Celebrate({ closeDan, dan = "超长回忆蛋" }) {
-    return (
-        <StyledPopup>
-            <Confetti gravity={0.2} numberOfPieces={300} />
-            <div className="tip">
-                <h3 className="title">恭喜🎉🎉🎉</h3>
-                <div className="content">
-                    <p>太棒了！！！</p>
-                    <p>找到了一个彩蛋：<strong>{dan}</strong>，截图保存本界面，集齐<strong>两个彩蛋</strong>，即可找新郎🤵🏻（微信:<strong>yanggc_2013</strong>）兑换小两口精心准备的小礼品一件！</p>
-                    <p>免费&包邮，仅备10件，送完为止。</p>
-                </div>
-                <div className="ps">* 活动最终解释权归新郎所有</div>
-                <div className="close" onClick={closeDan}>
-                    <MdClose color="#fff" />
-                </div>
-            </div>
-        </StyledPopup>
-    )
+  const el = useRef(null);
+  // Create reference to store the Typed instance itself
+  const typed = useRef(null);
+  useEffect(() => {
+    if (dan) {
+      // elRef refers to the <span> rendered below
+      typed.current = new Typed(el.current, {
+        strings: [
+          `<p>太棒了！！！</p>
+          <p>找到了一个彩蛋：<strong>${dan}</strong>，截图保存本界面，集齐<strong>两个彩蛋</strong>，即可找新郎🤵🏻（微信:<strong>yanggc_2013</strong>）兑换小两口精心准备的小礼品一件！</p>
+          <p>免费且包邮，仅备10件，送完为止。</p>`,
+        ],
+        typeSpeed: 30,
+        showCursor: false
+      });
+    }
+
+    return () => {
+      if (dan) {
+        // Make sure to destroy Typed instance during cleanup
+        // to prevent memory leaks
+        typed.current.destroy();
+      }
+    }
+  }, [dan]);
+  return (
+    <StyledPopup>
+      <Confetti gravity={0.2} numberOfPieces={300} />
+      <div className="tip">
+        <h3 className="title">恭喜🎉🎉🎉</h3>
+        <div className="content" ref={el}>
+        </div>
+        <div className="ps">* 活动最终解释权归新郎所有</div>
+        <div className="close" onClick={closeDan}>
+          <MdClose color="#fff" />
+        </div>
+      </div>
+    </StyledPopup>
+  )
 }

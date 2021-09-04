@@ -25,7 +25,7 @@ const Wrapper = styled.footer`
 const Footer = (props) => (
   <Wrapper style={props.timeout ? { display: 'none' } : {}}>
     <p className="copyright">
-      created by tristan with ❤️ &nbsp;&copy; 2020 - {new Date().getFullYear()}
+      created by <a href="//yangerxiao.com" target="_blank">tristan</a> with ❤️ &nbsp;&copy; 2020 - {new Date().getFullYear()}
     </p>
     <p className="powerby">
       Powerd by

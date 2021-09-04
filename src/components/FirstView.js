@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled, { keyframes } from 'styled-components';
 import { HiChevronDoubleDown } from 'react-icons/hi'
 import Confetti from 'confetti-react'
 import Timer from 'react-compound-timer'
+import Typed from 'typed.js'
 
 import FrameImage from '../assets/imgs/frame.png'
 const AniDown = keyframes`
@@ -53,11 +54,17 @@ const StyledWrapper = styled.section`
       } */
       .title{
           font-family: 'SP-F';
-          font-weight: bold;
           display: flex;
           gap:.1rem;
           font-size: .48rem;
           padding:.2rem 0;
+          span{
+              white-space: nowrap;
+              strong{
+                  font-weight: bold;
+                  color: #be5678;
+              }
+          }
       }
       .date{
           display: flex;
@@ -75,6 +82,13 @@ const StyledWrapper = styled.section`
           }
       }
   }
+  .mask{
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+  }
  .down{
     position: absolute;
     width:.44rem;
@@ -90,14 +104,37 @@ const deadline = new Date(2021, 8, 15, 0, 0, 0).getTime()
 const initCountNum = deadline - now;
 // const initCountNum = 3000;
 export default function FirstView() {
-    const [direction, setDirection] = useState(initCountNum > 0 ? "backward" : "forward")
+    const [direction, setDirection] = useState(initCountNum > 0 ? "backward" : "forward");
+    const el = useRef(null);
+    // Create reference to store the Typed instance itself
+    const typed = useRef(null);
+    useEffect(() => {
+        // elRef refers to the <span> rendered below
+        typed.current = new Typed(el.current, {
+            strings: [
+                '我们<strong>相遇</strong>',
+                '我们<strong>相知</strong>',
+                '我们<strong>相爱</strong>',
+                '我们<strong>结婚</strong>啦!',
+            ],
+            typeSpeed: 200,
+            backSpeed: 50,
+            backDelay: 1000, loop: true
+        });
+
+        return () => {
+            // Make sure to destroy Typed instance during cleanup
+            // to prevent memory leaks
+            typed.current.destroy();
+        }
+    }, []);
     return (
         <StyledWrapper>
             <Confetti className="mask" recycle={true} numberOfPieces={99} wind={0.01} gravity={0.1} opacity={.8} tweenDuration={8000} />
             <div className="box">
                 {/* <div className="married">我们结婚啦</div> */}
-                <div className="title">
-                    💕我们结婚啦💕
+                <div className="title" >
+                    💕<span ref={el}></span>💕
                 </div>
                 <div className="date">
                     <div className="countdown">

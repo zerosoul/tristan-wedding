@@ -66,6 +66,9 @@ const StyledWrapper = styled.section`
                     line-height: 1.5;
                     margin-top: .12rem;
                     font-size: .15rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .1rem;
                 }
             }
             &:nth-child(even){
@@ -108,46 +111,41 @@ const StyledWrapper = styled.section`
 `;
 const prefix = 'https://g-store.oss-cn-beijing.aliyuncs.com/works/wedding/story.';
 const items = [{
-    title: "初次见面",
+    title: "相遇：幸运施了魔法~",
     datetime: "2020.05.06",
-    desc: "相识于豆瓣，第一次聊天即线下见面，所以算不上网恋。平日拖鞋大裤衩习惯了，那天特意穿了件衬衫，往文质彬彬方向靠拢，有些“气质”是掩盖不住的，时间久了，还是暴露出又直又土的本色。好在第一印象双方都觉得不错，才有了后续。😂",
+    desc: `<span>2020年4月底，我在豆瓣发现了她，第一次聊天即线下见面，所以称不上网恋。</span><span>那天我们聊了许久，感觉有说不完的话，不知不觉喝掉好几壶水呢~</span><span>虽然是首次接触，但就像认识了许久，这种熟悉又惊喜的感觉，使我们一点点向彼此靠近。</span>`,
     picture: `${prefix}meet.png?x-oss-process=image/resize,w_300`,
 }, {
-    title: "一起户外",
+    title: "相知：爱情中的模样~",
     datetime: "2020.05.23",
-    desc: "都喜欢户外，但是正值疫情，所以只能在住所附近的小山玩一玩。一起去的最多的，当属北京百望山。后来，还去挑战了狗牙山10km穿越，有点冒险，但很刺激。再后来去了：香山，十渡露营，永定河旁边的乡间小路探险，遇见了一段废弃的铁路，学起了网红拍照，结果腿被咬了好几个包，这就是臭美的代价吧😄",
+    desc: `<span>丘比特之箭射中了我们，空气都是甜甜的玉米味儿。</span>
+    <span>我们都爱大自然、且喜欢户外。</span>
+    <span>我们去永定河旁边的乡间小路探险，漫无目的地边走边玩，落日余晖下的她，真的好美。</span>
+    <span>我们一起爬好汉坡，蹭免费的植物园门票，欢呼雀跃的我们，像极了小孩子。</span>
+    <span>我们还挑战狗牙山10km穿越，有点冒险，很刺激，但她吓得不行，并严令禁止我再次挑战，她说：不想拿自己的生命冒险，当然也不想失去我。</span>
+    <span>我们喜欢看小说，喜欢从别人的故事中汲取人生智慧，甚至发表过一模一样的小说解读。</span>
+    <span>我们喜欢听歌疗愈，她听的歌大多痞痞的有点酷，我听得歌就是温柔偏大众了。</span>
+    <span>我们穿衣风格、消费习惯均高度相似，甚至脖子右侧有个一模一样的痣，上辈子的我们，可能是兄妹。</span>
+    <span>我们一起生活后，当然也免不了生活的摩擦。</span>
+    <span>我偏理性，她偏感性。</span>
+    <span>我是个慢性子，她是个急脾气。</span>
+    <span>我生气起来不爱说话，她生气起来爱飙狠话。</span>
+    <span>好在每次吵架我们都能冷静下来及时复盘，并学着去表达自己的感受，然后互相调整。</span>
+    <span>好的亲密关系是相处磨合出来的，我们愿意为了彼此去付出爱与精力，并时刻感恩。</span>`,
     picture: `${prefix}bws.png?x-oss-process=image/resize,w_300`,
 }, {
-    title: "一起逛街",
+    title: "相守：心安即是归处",
     datetime: "2020.06.06",
-    desc: "作为一名直男，逛街约等于被牵着遛，好在彼此有一个共同点：买衣服基本都去优衣库。所以，优衣库成为了每次逛街必打卡地点",
-    picture: `${prefix}youyiku.png?x-oss-process=image/resize,w_300`,
-}, {
-    title: "一起变胖",
-    datetime: "2020.07.06",
-    desc: "两人在一起久了，日常无非就是一日三餐，好好吃饭，是彼此共同的追求。有段时间买了个小米电烤锅，隔三差五的就火锅烤肉走起，以前粗茶淡饭的我哪经得起这般诱惑，没多久就肉眼可见地胖了起来。后来我又拾起来做饭技能，天天做便当，你一份，我一份，天天上班在办公室带饭吃。先胖带动后胖，最终实现了“共同致胖”。",
-    picture: `${prefix}eating.png?x-oss-process=image/resize,w_300`,
-}, {
-    title: "一起过节",
-    datetime: "2020.11.11",
-    desc: "新找的一份工作还是电商行业，双十一那天，特别忙，但也没忘了给我这个程序员过一个节。老感动了，给洗了一个月的袜子。",
-    picture: `${prefix}1111.png?x-oss-process=image/resize,w_300`,
-}, {
-    title: "一起离京",
-    datetime: "2021.06.29",
-    desc: "心有所属，在哪里都可以随时建立一个家，不管是租来的，还是买来的。但是问题是已经有一个买来的住所，为何不离京呢？一拍即合，锅碗瓢盆打包一车搞定，吃完最后一顿火锅唱着歌，一路小跑就离京了。",
+    desc: `<span>不管是租房，还是买房，只要心有所属，哪里就是家。</span>
+    <span>我们一起生活后，迫切的需要有自己的小家，自己的厨房</span>
+    <span>但问题是老家已有一个买来的住所，何不离京呢？</span>
+    <span>北京适合生存，而不是适合生活。</span>
+    <span>两人一拍即合，锅碗瓢盆打包一车搞定，吃完最后一顿火锅唱着歌，一路小跑就离京了。</span>`,
     picture: `${prefix}leave.png?x-oss-process=image/resize,w_300`,
-}, {
-    title: "一起装修房子",
-    datetime: "2021.07.01",
-    desc: "从家徒四壁，到封阳台，打柜橱，刷墙漆，第一件家具入场，第一件家电入场，第一次睡新床，第一次去超市，第一次开火做饭...我们又经历了很多第一次",
-    picture: `${prefix}fang.png?x-oss-process=image/resize,w_300`,
-}, {
-    title: "领证啦~",
-    datetime: "2021.08.23",
-    desc: "在一个没有任何寓意的日子，简单准备了一下，就去民政局扯证了。也就五分钟的紧张与兴奋，很快回归正常。",
-    picture: `https://g-store.oss-cn-beijing.aliyuncs.com/works/wedding/6C4haT.jpg?x-oss-process=image/resize,w_300`,
-},]
+}]
+function createMarkup(html) {
+    return { __html: html };
+}
 
 export default function Couple() {
     return (
@@ -160,7 +158,7 @@ export default function Couple() {
                             <div className="content" style={{ animationDelay: `0.${idx * 5}s` }}>
                                 <h4 className="title">{title}</h4>
                                 <time className="date">{datetime}</time>
-                                <p className="desc">{desc}</p>
+                                <p className="desc" dangerouslySetInnerHTML={createMarkup(desc)}></p>
                             </div>
                             <div className="pic">
                                 <img src={picture} alt="picture" />
