@@ -54,7 +54,7 @@ z-index: 99999;
       width: 5rem;
       z-index: 9;
       position: absolute;
-      top:1rem;
+      top:20%;
       left: 50%;
       margin-left: -2.5rem ;
       padding:.4rem .3rem;
