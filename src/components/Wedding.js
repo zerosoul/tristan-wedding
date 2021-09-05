@@ -72,9 +72,7 @@ position: relative;
                   display: flex;
                   align-items: flex-start;
                   margin:.1rem 0;
-                  @media screen and (max-width: 768px) {
-                        flex-direction: column;
-                    }
+                 
                   .label{
                       color:#ccc;
                       white-space: nowrap;
@@ -104,6 +102,12 @@ position: relative;
                           }
                       }
                   }
+                  @media screen and (max-width: 768px) {
+                        flex-direction: column;
+                        .label{
+                            margin-bottom: .12rem;
+                        }
+                    }
               }
           }
       }
