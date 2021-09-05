@@ -90,7 +90,7 @@ const StyledWrapper = styled.section`
     }
 `;
 
-const weddings = Array.from(Array(29).keys()).map((v, idx) => (`w${idx + 1}`)).filter(p => !['w5', 'w2', 'w6', 'w7', 'w13', 'w26', 'w21'].includes(p));
+const weddings = Array.from(Array(29).keys()).map((v, idx) => (`w${idx + 1}`)).filter(p => !['w2', 'w6', 'w7', 'w13', 'w26', 'w21', 'w10'].includes(p));
 const dailys = Array.from(Array(37).keys()).map((v, idx) => (`d${idx + 1}`)).filter(p => !['d7', 'd12', 'd15', 'd20', 'd21'].includes(p))
 console.log({ weddings });
 const GalleryInstance = ({ popupDan, cate = "wedding", photos = [] }) => {
