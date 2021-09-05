@@ -66,7 +66,7 @@ position: relative;
                   display: flex;
                   align-items: flex-start;
                   gap: .04rem;
-                  @media screen and (max-width: 375px) {
+                  @media screen and (max-width: 414px) {
                         flex-direction: column;
                         gap: .1rem;
                     }

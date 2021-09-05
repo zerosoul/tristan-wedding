@@ -18,16 +18,18 @@ const AniDown = keyframes`
 `
 const StyledWrapper = styled.section`
   position: relative;
-  width:100vw;
+  width:100%;
   height:100vh;
   background-image: url('https://g-store.oss-cn-beijing.aliyuncs.com/works/wedding/w12.png?x-oss-process=image/resize,w_2500');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 769px) {
+      background-attachment: fixed;
+    }
   .box{
       z-index: 99;
       margin-top: 1.2rem;
@@ -48,10 +50,6 @@ const StyledWrapper = styled.section`
       filter: opacity(0.8);
       width: 3.8rem;
       height: 3.8rem;
-      /* .married{
-          font-size:.22rem ;
-          color:#666;
-      } */
       .title{
           font-family: 'SP-F';
           display: flex;
@@ -77,7 +75,7 @@ const StyledWrapper = styled.section`
           }
           .countdown{
               font-weight: 800;
-            font-size: .2rem;
+              font-size: .2rem;
               color:#666;
           }
       }

@@ -12,7 +12,7 @@ const StyledWrapper = styled.section`
     align-items: center;
     justify-content: center;
     gap:.4rem;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 414px) {
         gap: 0;
         flex-direction: column;
     }

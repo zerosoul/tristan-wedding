@@ -92,7 +92,7 @@ const StyledWrapper = styled.section`
                     object-fit: cover;
                 }
             }
-            @media screen and (max-width: 375px) {
+            @media screen and (max-width: 414px) {
                 flex-direction:column-reverse;
                 &:nth-child(even){
                     flex-direction: column-reverse;

@@ -46,7 +46,7 @@ const StyledWrapper = styled.section`
             }
           }
       }
-      @media screen and (max-width: 375px) {
+      @media screen and (max-width: 414px) {
             padding:0 .02rem;
             .lg-react-element{
                 column-count: 3;
@@ -64,6 +64,8 @@ const StyledWrapper = styled.section`
         .group{
             display: flex;
             .btn{
+                background-color: #eee;
+                margin:0;
                 transition: all .6s ease-in-out;
                 cursor: pointer;
                 border:none;
