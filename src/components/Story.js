@@ -14,7 +14,6 @@ const StyledWrapper = styled.section`
   background-color: #eee;
   padding:.3rem 0;
   .tl{
-    max-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,7 +36,7 @@ const StyledWrapper = styled.section`
                 border:1px solid #eef;
                 padding:.2rem;
                 border-radius: .12rem;
-                width: 3rem;
+                width: 4rem;
                 .title{
                     font-size: .3rem;
                 }
@@ -48,7 +47,7 @@ const StyledWrapper = styled.section`
                     color:#666;
                 }
                 .desc{
-                    height: 1rem;
+                    height: 1.5rem;
                     overflow: scroll;
                     line-height: 1.5;
                     margin-top: .12rem;
@@ -64,7 +63,7 @@ const StyledWrapper = styled.section`
                 flex-direction: row-reverse;
             }
             .heart{
-                margin:0 .12rem;
+                margin:0 .2rem;
                 font-size: .3rem;
                 animation: ${AniBeating} 1s ease-in-out infinite;
                 animation-direction:alternate;
@@ -87,15 +86,11 @@ const StyledWrapper = styled.section`
             }
             @media screen and (max-width: 414px) {
                 flex-direction:column-reverse;
+                .heart{
+                    margin:.2rem 0;
+                }
                 &:nth-child(even){
                     flex-direction: column-reverse;
-                    .content:after{
-                        left: calc(50% - .15rem);
-                    }
-                }
-                .content:after{
-                    top: -0.4rem;
-                    left: calc(50% - .15rem);
                 }
             }
         }
@@ -132,8 +127,18 @@ const items = [{
     desc: `<span>不管是租房，还是买房，只要心有所属，哪里就是家。</span>
     <span>我们一起生活后，迫切的需要有自己的小家，自己的厨房</span>
     <span>但问题是老家已有一个买来的住所，何不离京呢？</span>
-    <span>北京适合生存，而不是适合生活。</span>
-    <span>两人一拍即合，锅碗瓢盆打包一车搞定，吃完最后一顿火锅唱着歌，一路小跑就离京了。</span>`,
+    <span>北京适合生存，不适合生活。</span>
+    <span>两人一拍即合，锅碗瓢盆打包一车搞定，吃完最后一顿火锅唱着歌，一路小跑就离京了。</span>
+    <span>我们的小家于5月份开始硬装，7月初着手软装。</span>
+    <span>从家徒四壁，到找装修公司，多次确认设计方案，然后灯具，家具，家电依次入场...</span>
+    <span>看到小家一点点变成我们想要的样子，真是发自内心的快乐。</span>
+    <span>对于这种突如其来的个人空间，我们沉浸在极大的新鲜感与兴奋感里，无法自拔。</span>
+    <span>我经常各个房间晃来晃去，她经常拿着盒尺量来量去，然后不约而同的相视，咯咯傻笑。</span>
+
+    <span>2021年8月23日，我们领证了！</span>
+    <span>只有那5分钟的紧张激动，很快就恢复平静。</span>
+    <span>可能在我心里，我们早就结婚了，这已然成为我们的日常生活。</span>
+    <span>我们以后将更珍惜彼此，小心呵护这份难得的感情~ 有福同享、有难同当，齐心协力、共同为我们的美好未来努力！</span>`,
     picture: `${prefix}leave.png?x-oss-process=image/resize,w_300`,
 }]
 function createMarkup(html) {
@@ -143,7 +148,7 @@ function createMarkup(html) {
 export default function Couple() {
     return (
         <StyledWrapper>
-            <Title title="相遇 · 相知" />
+            <Title title="我们的故事" />
             <div className="tl">
                 <ul className="items">
                     {items.map(({ title, datetime, desc, picture }, idx) =>

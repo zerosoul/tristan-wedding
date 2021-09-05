@@ -11,7 +11,10 @@ const StyledWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-   
+    @media screen and (max-width: 414px) {
+        flex-direction: column;
+        margin:0;
+    }
       .profile{
           color: #222;
           padding:.4rem;
@@ -20,10 +23,6 @@ const StyledWrapper = styled.section`
           align-items: center;
           justify-content: center;
           margin-right: inherit.4rem;
-          @media screen and (max-width: 414px) {
-              flex-direction: column;
-              margin:0;
-          }
           .pic{
               width: 2.8rem;
               height: 2.8rem;
@@ -71,7 +70,7 @@ const tips = {
 export default function Couple({ popupDan }) {
     const [pos, setPos] = useState('h')
     useEffect(() => {
-        if (window.innerWidth <= 360) {
+        if (window.innerWidth <= 414) {
             setPos('v')
         }
     }, []);
