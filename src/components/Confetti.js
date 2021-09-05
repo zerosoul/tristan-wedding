@@ -64,13 +64,13 @@ z-index: 99999;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: .2rem;
       animation: ${AniBounceIn} 1s both;
       .title{
           font-size: .3rem;
           font-weight: 800;
       }
       .content{
+        margin:.2rem 0;
           color: #333;
           font-size: .2rem;
           padding:.3rem 0;

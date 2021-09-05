@@ -46,16 +46,15 @@ const StyledWrapper = styled.section`
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: .2rem;
       filter: opacity(0.8);
       width: 3.8rem;
       height: 3.8rem;
       .title{
           font-family: 'SP-F';
           display: flex;
-          gap:.1rem;
           font-size: .48rem;
           padding:.2rem 0;
+          margin-bottom: .2rem;
           span{
               white-space: nowrap;
               strong{
@@ -68,10 +67,10 @@ const StyledWrapper = styled.section`
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: .12rem;
           .time{
               font-size: .16rem;
               color:#999;
+              margin-top:.12rem ;
           }
           .countdown{
               font-weight: 800;
@@ -79,13 +78,6 @@ const StyledWrapper = styled.section`
               color:#666;
           }
       }
-  }
-  .mask{
-      position: absolute;
-      top:0;
-      left:0;
-      width: 100%;
-      height: 100%;
   }
  .down{
     position: absolute;
@@ -103,9 +95,20 @@ const initCountNum = deadline - now;
 // const initCountNum = 3000;
 export default function FirstView() {
     const [direction, setDirection] = useState(initCountNum > 0 ? "backward" : "forward");
+    const [size, setSize] = useState(null);
+    const container = useRef(null)
     const el = useRef(null);
     // Create reference to store the Typed instance itself
     const typed = useRef(null);
+    useEffect(() => {
+        if (container) {
+            setTimeout(() => {
+
+                const { width, height } = getComputedStyle(container.current);
+                setSize({ width, height })
+            }, 500)
+        }
+    }, [])
     useEffect(() => {
         // elRef refers to the <span> rendered below
         typed.current = new Typed(el.current, {
@@ -117,7 +120,8 @@ export default function FirstView() {
             ],
             typeSpeed: 200,
             backSpeed: 50,
-            backDelay: 1000, loop: true
+            backDelay: 1000,
+            loop: true
         });
 
         return () => {
@@ -127,8 +131,8 @@ export default function FirstView() {
         }
     }, []);
     return (
-        <StyledWrapper>
-            <Confetti className="mask" recycle={true} numberOfPieces={99} wind={0.01} gravity={0.1} opacity={.8} tweenDuration={8000} />
+        <StyledWrapper ref={container}>
+            {size && <Confetti width={size.width} height={size.height} className="mask" recycle={true} numberOfPieces={99} wind={0.01} gravity={0.1} opacity={.8} tweenDuration={8000} />}
             <div className="box">
                 {/* <div className="married">我们结婚啦</div> */}
                 <div className="title" >

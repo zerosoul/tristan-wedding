@@ -11,11 +11,7 @@ const StyledWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:.4rem;
-    @media screen and (max-width: 414px) {
-        gap: 0;
-        flex-direction: column;
-    }
+   
       .profile{
           color: #222;
           padding:.4rem;
@@ -23,7 +19,11 @@ const StyledWrapper = styled.section`
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          gap: .2rem;
+          margin-right: inherit.4rem;
+          @media screen and (max-width: 414px) {
+              flex-direction: column;
+              margin:0;
+          }
           .pic{
               width: 2.8rem;
               height: 2.8rem;
@@ -48,6 +48,7 @@ const StyledWrapper = styled.section`
             font-family: 'SP-F';
               font-size: .4rem;
               padding:.2rem 0;
+              margin: .2rem 0;
           }
           .intro{
             font-size: .12rem;

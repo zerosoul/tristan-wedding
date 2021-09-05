@@ -20,25 +20,26 @@ const StyledWrapper = styled.section`
   background-color: #eee;
   padding:.3rem 0 1rem 0;
   .wrapper{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     .countdown{
-      border: 2px solid #ccc;
+      width: 100%;
+      max-width: 1200px;
+      /* border: 2px solid #ccc; */
       background-color: rgba(2,2,2,.5);
-      border-radius: 10px;
-      padding:.3rem .6rem;
+      /* border-radius: 10px; */
+      padding:.3rem 0;
       display: flex;
       align-items: center;
-      gap: 1rem;
-      justify-content: space-evenly;
+      justify-content: space-around;
       font-size: .24rem;
       .box{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: .1rem;
         padding: 0.35rem;
         width: 1.2rem;
         height: 1.2rem;
@@ -48,6 +49,7 @@ const StyledWrapper = styled.section`
           color: #fff;
           font-weight: 800;
           font-size: 1rem;
+          margin-bottom: .1rem;
         }
         .txt{
           color: #eee;
@@ -55,7 +57,6 @@ const StyledWrapper = styled.section`
         }
       }
       @media screen and (max-width: 768px) {
-          gap: 0.2rem;
           /* flex-direction: column; */
           .box {
             width: .6rem;

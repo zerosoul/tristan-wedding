@@ -28,26 +28,32 @@ position: relative;
       margin: .2rem auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap:.4rem;
+    justify-content: space-evenly;
     @media screen and (max-width: 768px) {
         flex-direction: column;
     }
       .box{
           min-height: 4.4rem;
-          min-width: 4rem;
-        background-color: rgba(2,2,2,.5);
-        z-index: 9;
+          width: 4rem;
+            background-color: rgba(2,2,2,.5);
+            z-index: 9;
           color: #fff;
           padding:.25rem .5rem;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: flex-start;
-          gap: .2rem;
           font-size: .2rem;
           border-radius: 5px;
           /* border: 2px solid rgba(2,2,2,.5); */
+          &:first-child{
+              margin:0 0.25rem 0 0;
+          }
+          @media screen and (max-width: 768px) {
+            &:first-child{
+                margin: 0 0 0.25rem 0;
+            }
+          }
           .title{
               font-size: .3rem;
               width:100%;
@@ -60,15 +66,14 @@ position: relative;
               display: flex;
               flex-direction: column;
               align-items: flex-start;
-              gap:.2rem;
+              margin:.2rem 0;
               .item{
                 font-size: .22rem;
                   display: flex;
                   align-items: flex-start;
-                  gap: .04rem;
-                  @media screen and (max-width: 414px) {
+                  margin:.1rem 0;
+                  @media screen and (max-width: 768px) {
                         flex-direction: column;
-                        gap: .1rem;
                     }
                   .label{
                       color:#ccc;
@@ -78,14 +83,13 @@ position: relative;
                       }
                   }
                   .txt{
-                      
                     white-space: nowrap;
                     font-weight: 800;
                       &.loc{
                           display: flex;
                           flex-direction: column;
-                          gap: .12rem;
                           .map{
+                              margin-top: .12rem;
                               width:2.4rem;
                               height:2.4rem;
                               img{

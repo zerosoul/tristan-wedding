@@ -24,38 +24,25 @@ const StyledWrapper = styled.section`
         overflow-x: hidden;
         display: flex;
         flex-direction: column;
-        gap: .1rem;
         .item{
             display: flex;
             align-items: center;
-            gap: .4rem;
+            margin-bottom: .4rem;
             .content{
                 position: relative;
                 background-color: #fff;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                gap:.1rem;
                 border:1px solid #eef;
                 padding:.2rem;
                 border-radius: .12rem;
                 width: 3rem;
-                
-                &:after{
-                    content: "💓";
-                    position: absolute;
-                    top:50%;
-                    right: -.5rem;
-                    transform: translateY(-50%);
-                    font-size: .3rem;
-                    animation: ${AniBeating} 1s ease-in-out infinite;
-                    animation-direction:alternate;
-                    animation-delay: inherit;
-                }
                 .title{
                     font-size: .3rem;
                 }
                 .date{
+                    margin:.1rem 0;
                     font-style:oblique;
                     font-size: .12rem;
                     color:#666;
@@ -68,21 +55,27 @@ const StyledWrapper = styled.section`
                     font-size: .15rem;
                     display: flex;
                     flex-direction: column;
-                    gap: .1rem;
+                    span{
+                        margin-bottom: .1rem;
+                    }
                 }
             }
             &:nth-child(even){
                 flex-direction: row-reverse;
-                .content:after{
-                    left: -.5rem;
-                }
+            }
+            .heart{
+                margin:0 .12rem;
+                font-size: .3rem;
+                animation: ${AniBeating} 1s ease-in-out infinite;
+                animation-direction:alternate;
+                animation-delay: inherit;
             }
             .pic{
                 position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: .4rem;
+                padding: 0;
                 img{
                     z-index: 8;
                     border-radius: 50%;
@@ -155,15 +148,16 @@ export default function Couple() {
                 <ul className="items">
                     {items.map(({ title, datetime, desc, picture }, idx) =>
                         <li key={title} className="item">
+                            <div className="pic">
+                                <img src={picture} alt="picture" />
+                            </div>
+                            <i className="heart">💓</i>
                             <div className="content" style={{ animationDelay: `0.${idx * 5}s` }}>
                                 <h4 className="title">{title}</h4>
                                 <time className="date">{datetime}</time>
                                 <p className="desc" dangerouslySetInnerHTML={createMarkup(desc)}></p>
                             </div>
-                            <div className="pic">
-                                <img src={picture} alt="picture" />
-                            </div>
-                            <div className="placeholder"></div>
+
                         </li>
                     )}
                 </ul>
