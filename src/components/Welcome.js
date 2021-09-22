@@ -115,8 +115,7 @@ const StyledWrapper = styled.section`
         font-size: .8rem;
         padding:.1rem .3rem;
       }
-      /* background-color: rgba(0, 202, 114, 1); */
-      background: linear-gradient(145deg, #09b66b, #07995a);
+      background: linear-gradient(145deg, #ca3d27, #ca0d00);
     }
     
   }
@@ -126,7 +125,7 @@ const deadline = new Date(2021, 8, 15, 0, 0, 0).getTime()
 const initCountNum = deadline - now;
 // const initCountNum = 5 * 1000;
 export default function Welcome() {
-  const [stop, setStop] = useState(false)
+  const [stop, setStop] = useState(initCountNum < 0)
   return (
     <StyledWrapper>
       <Title title="欢迎参加" />
