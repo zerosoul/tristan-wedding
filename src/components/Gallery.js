@@ -19,8 +19,10 @@ const Loading = styled.div`
 const StyledWrapper = styled.section`
   min-height: 50vh;
   width:100%;
+  max-width: 1800px;
   background-color: #fff;
   padding:.3rem 0;
+  margin: auto;
   .wrapper{
       width:100%;
       padding:0;

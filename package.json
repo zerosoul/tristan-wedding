@@ -1,30 +1,25 @@
 {
   "name": "tristan-wedding",
   "description": "Tristan Yang's wedding site",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Tristan",
   "homepage": "https://wedding.yangerxiao.com",
   "dependencies": {
     "confetti-react": "^2.5.0",
-    "gatsby": "^3.14.0",
+    "gatsby": "^4.24.4",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-baidu-analytics": "^2.2.0",
-    "gatsby-plugin-manifest": "^3.14.0",
-    "gatsby-plugin-offline": "^4.14.0",
-    "gatsby-plugin-react-helmet": "^4.14.0",
-    "gatsby-plugin-styled-components": "^4.14.0",
-    "gatsby-source-filesystem": "^3.14.0",
-    "gitalk": "^1.7.2",
-    "lightgallery": "^2.2.1",
-    "prop-types": "^15.7.2",
-    "qrcode.react": "^1.0.1",
-    "react": "^17.0.2",
+    "gatsby-plugin-manifest": "^4.24.0",
+    "gatsby-plugin-offline": "^5.24.0",
+    "gatsby-plugin-styled-components": "^5.24.0",
+    "lightgallery": "^2.7.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
     "react-compound-timer": "^1.2.0",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.2.0",
-    "styled-components": "^5.3.1",
-    "styled-reset": "^4.3.4",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.6.0",
+    "styled-components": "^5.3.6",
+    "styled-reset": "^4.4.2",
     "typed.js": "^2.0.12"
   },
   "keywords": [
@@ -42,8 +37,8 @@
     "format": "prettier --write 'src/**/*.js'"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.13.2",
-    "prettier": "^2.4.1"
+    "babel-plugin-styled-components": "^2.0.7",
+    "prettier": "^2.7.1"
   },
   "repository": {
     "type": "git",

@@ -5,10 +5,10 @@ import styled from 'styled-components'
 const Wrapper = styled.footer`
   width: 100%;
   max-width: 100%;
-  padding: 1rem 0 .4rem 0;
+  padding: 1rem 0 0.4rem 0;
   text-align: center;
   .copyright,
-  .powerby,
+  .powered_by,
   .icp {
     letter-spacing: 2px;
     font-size: 0.14rem;
@@ -25,10 +25,14 @@ const Wrapper = styled.footer`
 const Footer = (props) => (
   <Wrapper style={props.timeout ? { display: 'none' } : {}}>
     <p className="copyright">
-      created by <a href="//yangerxiao.com" target="_blank">tristan</a> with ❤️ &nbsp;&copy; 2020 - {new Date().getFullYear()}
+      created by{' '}
+      <a href="//yangerxiao.com" target="_blank">
+        tristan
+      </a>{' '}
+      with ❤️ &nbsp;&copy; 2020 - {new Date().getFullYear()}
     </p>
-    <p className="powerby">
-      Powerd by
+    <p className="powered_by">
+      Powered by
       <a target="_blank" href="https://www.gatsbyjs.org/">
         Gatsby.js
       </a>

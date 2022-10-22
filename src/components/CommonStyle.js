@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const CommonStyle = createGlobalStyle`
  html{
@@ -39,6 +39,6 @@ const CommonStyle = createGlobalStyle`
     font-style: normal;
     font-weight: normal;
 }
-`;
+`
 
-export default CommonStyle;
+export default CommonStyle
