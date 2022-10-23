@@ -71,8 +71,10 @@ const tips = {
 export default function Couple({ popupDan }) {
   const [pos, setPos] = useState('h')
   useEffect(() => {
-    if (window.innerWidth <= 414) {
-      setPos('v')
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth <= 414) {
+        setPos('v')
+      }
     }
   }, [])
   const handleDC = () => {
