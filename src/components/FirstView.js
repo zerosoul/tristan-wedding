@@ -5,7 +5,7 @@ import Confetti from 'confetti-react'
 import Typed from 'typed.js'
 
 import FrameImage from '../assets/imgs/frame.png'
-import useTimer from './useTimer'
+import useTimer from '../useTimer'
 const AniDown = keyframes`
     from{
         transform:translateY(-10px);
@@ -84,6 +84,7 @@ const StyledWrapper = styled.section`
           margin-top: 0.12rem;
         }
         .countdown {
+          font-family: monospace;
           font-weight: 800;
           font-size: 0.2rem;
           color: #666;
@@ -105,7 +106,7 @@ const StyledWrapper = styled.section`
 // initialTime: initCountNum,
 // const initCountNum = 3000;
 export default function FirstView() {
-  const { value, startTimer } = useTimer()
+  const { startTimer, stopTimer, value } = useTimer()
   const [size, setSize] = useState(null)
   const container = useRef(null)
   const el = useRef(null)
@@ -119,6 +120,9 @@ export default function FirstView() {
       }, 500)
     }
     startTimer()
+    return () => {
+      stopTimer()
+    }
   }, [])
   useEffect(() => {
     // elRef refers to the <span> rendered below
@@ -165,7 +169,7 @@ export default function FirstView() {
           <div className="date">
             <div className="countdown">
               <span className="num day">
-                {value.d}天{value.h}时{value.m}分{value.s}秒
+                {value.day}天{value.hour}小时{value.minute}分{value.second}秒
               </span>
             </div>
             <div className="time">2021.09.15</div>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Confetti from 'confetti-react'
 import Title from './SectionTitle'
-import useTimer from './useTimer'
+import useTimer from '../useTimer'
 
 const StyledWrapper = styled.section`
   width: 100%;
@@ -93,9 +93,12 @@ const StyledWrapper = styled.section`
 `
 
 export default function Welcome() {
-  const { value, startTimer } = useTimer()
+  const { value, startTimer, stopTimer } = useTimer()
   useEffect(() => {
     startTimer()
+    return () => {
+      stopTimer()
+    }
   }, [])
   return (
     <StyledWrapper>
@@ -103,19 +106,19 @@ export default function Welcome() {
       <div className="wrapper">
         <div className="countdown">
           <div className="box">
-            <span className="num day">{value.d}</span>
+            <span className="num day">{value.day}</span>
             <span className="txt">天</span>
           </div>
           <div className="box">
-            <span className="num hour">{value.h}</span>
+            <span className="num hour">{value.hour}</span>
             <span className="txt">时</span>
           </div>
           <div className="box">
-            <span className="num min">{value.m}</span>
+            <span className="num min">{value.minute}</span>
             <span className="txt">分</span>
           </div>
           <div className="box">
-            <span className="num second">{value.s}</span>
+            <span className="num second">{value.second}</span>
             <span className="txt">秒</span>
           </div>
         </div>
