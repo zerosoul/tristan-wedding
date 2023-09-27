@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { HiChevronDoubleDown } from 'react-icons/hi'
 import Confetti from 'confetti-react'
-import { createTimeModel, useTimeModel } from 'react-compound-timer'
 import Typed from 'typed.js'
 
 import FrameImage from '../assets/imgs/frame.png'
+import useTimer from './useTimer'
 const AniDown = keyframes`
     from{
         transform:translateY(-10px);
@@ -102,17 +102,10 @@ const StyledWrapper = styled.section`
     animation: ${AniDown} 1s infinite;
   }
 `
-const deadline = new Date(2021, 8, 15, 0, 0, 0).getTime()
-const timer = createTimeModel({
-  direction: 'forward',
-  startImmediately: true,
-  initialTime: Date.now() - deadline,
-  timeToUpdate: 1000
-})
 // initialTime: initCountNum,
 // const initCountNum = 3000;
 export default function FirstView() {
-  const { value } = useTimeModel(timer)
+  const { value, startTimer } = useTimer()
   const [size, setSize] = useState(null)
   const container = useRef(null)
   const el = useRef(null)
@@ -125,6 +118,7 @@ export default function FirstView() {
         setSize({ width, height })
       }, 500)
     }
+    startTimer()
   }, [])
   useEffect(() => {
     // elRef refers to the <span> rendered below

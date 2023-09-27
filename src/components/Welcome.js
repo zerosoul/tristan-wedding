@@ -1,20 +1,9 @@
-import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
-import { createTimeModel, useTimeModel } from 'react-compound-timer'
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
 import Confetti from 'confetti-react'
 import Title from './SectionTitle'
+import useTimer from './useTimer'
 
-const AniBreath = keyframes`
-  from{
-    opacity:0.4;
-    box-shadow: none;
-  }
-  to{
-    opacity:1;
-    box-shadow:  20px 20px 60px #079155,
-               -20px -20px 60px #079e5d;
-  }
-`
 const StyledWrapper = styled.section`
   width: 100%;
   /* background-color: #eee; */
@@ -99,20 +88,15 @@ const StyledWrapper = styled.section`
         font-size: 0.8rem;
         padding: 0.1rem 0.3rem;
       }
-      /* background: linear-gradient(145deg, #ca3d27, #ca0d00); */
     }
   }
 `
 
-const deadline = new Date(2021, 8, 15, 0, 0, 0).getTime()
-const timer = createTimeModel({
-  direction: 'forward',
-  startImmediately: true,
-  initialTime: Date.now() - deadline,
-  timeToUpdate: 1000
-})
 export default function Welcome() {
-  const { value } = useTimeModel(timer)
+  const { value, startTimer } = useTimer()
+  useEffect(() => {
+    startTimer()
+  }, [])
   return (
     <StyledWrapper>
       <Title title="欢迎参加" />
