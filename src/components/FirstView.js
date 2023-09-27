@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { HiChevronDoubleDown } from 'react-icons/hi'
 import Confetti from 'confetti-react'
-import Timer from 'react-compound-timer'
+import { createTimeModel, useTimeModel } from 'react-compound-timer'
 import Typed from 'typed.js'
 
 import FrameImage from '../assets/imgs/frame.png'
@@ -102,14 +102,17 @@ const StyledWrapper = styled.section`
     animation: ${AniDown} 1s infinite;
   }
 `
-const now = new Date().getTime()
 const deadline = new Date(2021, 8, 15, 0, 0, 0).getTime()
-const initCountNum = deadline - now
+const timer = createTimeModel({
+  direction: 'forward',
+  startImmediately: true,
+  initialTime: Date.now() - deadline,
+  timeToUpdate: 1000
+})
+// initialTime: initCountNum,
 // const initCountNum = 3000;
 export default function FirstView() {
-  const [direction, setDirection] = useState(
-    initCountNum > 0 ? 'backward' : 'forward'
-  )
+  const { value } = useTimeModel(timer)
   const [size, setSize] = useState(null)
   const container = useRef(null)
   const el = useRef(null)
@@ -167,24 +170,9 @@ export default function FirstView() {
           </div>
           <div className="date">
             <div className="countdown">
-              <Timer
-                checkpoints={[
-                  {
-                    time: 0,
-                    callback: () => {
-                      setDirection('forward')
-                    }
-                  }
-                ]}
-                initialTime={Math.abs(initCountNum)}
-                direction={direction}
-                formatValue={(value) => `${value < 10 ? `0${value}` : value}`}
-              >
-                <span className="num day">
-                  <Timer.Days />天<Timer.Hours />时<Timer.Minutes />分
-                  <Timer.Seconds />秒
-                </span>
-              </Timer>
+              <span className="num day">
+                {value.d}天{value.h}时{value.m}分{value.s}秒
+              </span>
             </div>
             <div className="time">2021.09.15</div>
           </div>

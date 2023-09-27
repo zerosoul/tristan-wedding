@@ -100,7 +100,7 @@ const weddings = Array.from(Array(29).keys())
 const dailys = Array.from(Array(37).keys())
   .map((v, idx) => `d${idx + 1}`)
   .filter((p) => !['d7', 'd12', 'd15', 'd20', 'd21'].includes(p))
-console.log({ weddings })
+// console.log({ weddings })
 const GalleryInstance = ({ popupDan, cate = 'wedding', photos = [] }) => {
   const viewCount = useRef(0)
   const title = {
@@ -108,16 +108,16 @@ const GalleryInstance = ({ popupDan, cate = 'wedding', photos = [] }) => {
     dailys: '羊二与聪聪的日常'
   }
   const [reiniting, setReiniting] = useState(false)
-  console.log({ photos })
+  // console.log({ photos })
   const onInit = (detail) => {
     console.log('lightGallery has been initialized', detail)
   }
   const handleSlideAfter = () => {
     viewCount.current = viewCount.current + 1
-    console.log(viewCount.current)
+    // console.log(viewCount.current)
   }
   const handleLgClose = () => {
-    console.log('lg close')
+    // console.log('lg close')
     if (viewCount.current >= 20) {
       popupDan('超长回忆')
     }
