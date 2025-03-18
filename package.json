@@ -32,7 +32,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "yarn install && gatsby build",
+    "build": "gatsby build",
     "dev": "gatsby develop",
     "deploy": "gatsby build && git add public && git commit -m 'rebuild' && git push",
     "format": "prettier --write 'src/**/*.js'"
